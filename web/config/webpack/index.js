@@ -3,8 +3,9 @@
  */
 
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const merge = require("webpack-merge");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 // Default NODE_ENV to 'production'
 process.env.NODE_ENV = process.env.NODE_ENV || "production";
@@ -24,6 +25,7 @@ const baseConfig = {
   },
   resolve: {
     extensions: [".web.ts", ".web.tsx", ".ts", ".tsx", ".js", ".jsx"],
+    plugins: [new TsconfigPathsPlugin()],
     alias: {
       "react-native$": "react-native-web"
     }
