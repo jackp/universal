@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "*": ["*", "src/*"] // Allow resolving any module from /src directory
+    },
     "target": "es2015",
     "jsx": "react", // Uses Typescript to transpile instead of Babel
     "moduleResolution": "node",
